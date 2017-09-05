@@ -1,5 +1,7 @@
 /*
 * 去除字符串首尾空格
+* Trim 不会改变原字符串
+* Trim2 会改变原字符串
 */
 
 #include <stdio.h>
@@ -10,9 +12,9 @@ uint8_t *Trim(uint8_t *strVal)
 {
 	uint8_t *strptr2, *strptr3;
 
-	if(strVal == 0) 
+	if(strVal == 0)
 		return 0;
-	if(strlen((const char *)strVal) == 0) 
+	if(strlen((const char *)strVal) == 0)
 		return strVal;
 
 	strptr2 = strVal;
@@ -33,13 +35,13 @@ uint8_t *Trim(uint8_t *strVal)
 void Trim2(uint8_t *str)
 {
 	int index=0,i=0;
-  
-	//去除串首空格 
+
+	//去除串首空格
 	while(str[index]==' ') index++;
-	for(i=0; i<strlen(str)-index; i++) str[i] = str[i+index]; 
+	for(i=0; i<strlen(str)-index; i++) str[i] = str[i+index];
 	str[i]='\0';
-  
-	//去除串尾空格 
+
+	//去除串尾空格
 	index= strlen(str);
 	while(index>0 && str[index-1]==' ')  index--;
 	str[index]='\0';
