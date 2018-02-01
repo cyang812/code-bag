@@ -31,8 +31,9 @@ int main(int argc, char const *argv[])
 {
 	/* code */
 	uint16_t gen_polynom;
-//	gen_polynom = 0x1021;  // 0001 0000 0010 0001 (16, 12, 5, 0)
-	gen_polynom = 0x782f;  // 0111 1000 0010 1111 (16, 14, 13, 12, 11, 5, 3, 2, 1, 0)
+//	gen_polynom = 0x1021;  // CalcCRC_CRC16_CCITT dls dab+ 0001 0000 0010 0001 (16, 12, 5, 0)
+	gen_polynom = 0x8005;  // CalcCRC_CRC16_IBM mp2 1000 0000 0000 0101 (16, 15, 2, 0)
+//	gen_polynom = 0x782f;  // CalcCRC_FIRE_CODE dab+ 0111 1000 0010 1111 (16, 14, 13, 12, 11, 5, 3, 2, 1, 0)
 
 	FillLUT(gen_polynom);
 
