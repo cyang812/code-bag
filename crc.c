@@ -60,14 +60,14 @@ int main(int argc, char const *argv[])
 
 	// printf("\n");
 
-	uint8_t seq1[9] = {1,2,3,4,5,6,7,8,9};
-	uint8_t seq2[9] = {9,1,2,3,4,5,6,7,8};
+	uint8_t seq1[9] = {1,0,0,0,0,0,0,0,0};
+	uint8_t seq2[9] = {0,1,0,0,0,0,0,0,0};
 	// uint8_t seq2[9] = {1,1,2,2,2,2,2,2,2};
 
 	uint16_t crc1, crc2;
 
-	crc1 = Calc(seq1, sizeof(uint8_t));
-	crc2 = Calc(seq2, sizeof(uint8_t));
+	crc1 = Calc(seq1, sizeof(seq1));
+	crc2 = Calc(seq2, sizeof(seq2));
 
 	printf("crc1 = 0x%04x\n", crc1);
 	printf("crc2 = 0x%04x\n", crc2);
