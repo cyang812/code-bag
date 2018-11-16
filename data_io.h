@@ -2,8 +2,10 @@
 #define DATA_IO_H
 
 #include <stdint.h>
-#include <stdio.h>
-#include <string.h>
+
+#ifdef __cplusplus
+  extern "C" {
+#endif
 
 //volatile 
 
@@ -12,7 +14,7 @@ typedef struct {
     uint32_t br;
     uint32_t bw;
     uint32_t btoRead;
-	uint32_t length;
+    uint32_t length;
 }ringbuffer_t;
 
 extern void create_ringBuffer(ringbuffer_t * ringBuf, uint8_t * buf, uint32_t buf_len);
@@ -22,6 +24,10 @@ extern uint32_t read_ringBuffer(uint8_t *buffer, uint32_t size, ringbuffer_t *ri
 extern uint32_t get_ringBuffer_btoRead(ringbuffer_t *ringBuf);
 extern uint32_t get_ringBuffer_length(ringbuffer_t *ringBuf);
 extern uint32_t get_ringBuffer_bCanWrite(ringbuffer_t * ringBuf);
+
+#ifdef __cplusplus
+  }
+#endif
 
 #endif
 

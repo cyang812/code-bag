@@ -1,4 +1,5 @@
 #include "data_io.h"
+#include <stdio.h>
 #include <string.h>
 
 void create_ringBuffer(ringbuffer_t *ringBuf,uint8_t *buf,uint32_t buf_len)
@@ -73,7 +74,7 @@ uint32_t write_ringBuffer(uint8_t *buffer, uint32_t size, ringbuffer_t *ringBuf)
 
     ringBuf->bw = (ringBuf_bw + real_bytes) % ringBuf_len;
 	ringBuf->btoRead += real_bytes;
-
+	
     return real_bytes;
     #endif
 }
