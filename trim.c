@@ -1,7 +1,7 @@
 /*
-* È¥³ı×Ö·û´®Ê×Î²¿Õ¸ñ
-* Trim ²»»á¸Ä±äÔ­×Ö·û´®
-* Trim2 »á¸Ä±äÔ­×Ö·û´®
+* å»é™¤å­—ç¬¦ä¸²é¦–å°¾ç©ºæ ¼
+* Trim ä¸ä¼šæ”¹å˜åŸå­—ç¬¦ä¸²
+* Trim2 ä¼šæ”¹å˜åŸå­—ç¬¦ä¸²
 */
 
 #include <stdio.h>
@@ -36,12 +36,12 @@ void Trim2(uint8_t *str)
 {
 	int index=0,i=0;
 
-	//È¥³ı´®Ê×¿Õ¸ñ
+	//å»é™¤ä¸²é¦–ç©ºæ ¼
 	while(str[index]==' ') index++;
 	for(i=0; i<strlen(str)-index; i++) str[i] = str[i+index];
 	str[i]='\0';
 
-	//È¥³ı´®Î²¿Õ¸ñ
+	//å»é™¤ä¸²å°¾ç©ºæ ¼
 	index= strlen(str);
 	while(index>0 && str[index-1]==' ')  index--;
 	str[index]='\0';

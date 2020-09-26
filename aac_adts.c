@@ -4,26 +4,26 @@
 
 typedef struct adts_fixed_header 
 {  
-	unsigned int syncword:12;//Í¬²½×Ö0xfff£¬ËµÃ÷Ò»¸öADTSÖ¡µÄ¿ªÊ¼
-	unsigned char ID:1;//ID±È½ÏÆæ¹Ö,±ê×¼ÎÄµµÖĞÊÇÕâÃ´ËµµÄ¡±MPEG identifier, set to ¡®1¡¯. See ISO/IEC 11172-3¡å,µ«ÎÒĞ´0ÁË,Ò²¿ÉÒÔ
-	unsigned char layer:2;//Ò»°ãÉèÖÃÎª0
-	unsigned char protection_absent:1;//ÊÇ·ñÎóÂëĞ£Ñé
-	unsigned char profile:2;//±íÊ¾Ê¹ÓÃÄÄ¸ö¼¶±ğµÄAAC£¬Èç01 Low Complexity(LC)--- AACLC
-	unsigned char sampling_frequency_index:4;//±íÊ¾Ê¹ÓÃµÄ²ÉÑùÂÊÏÂ±ê0x3 48k ,0x4 44.1k, 0x5 32k
-	unsigned char private_bit:1;//Ò»°ãÉèÖÃÎª0
-	unsigned char channel_configuration:3;// ±íÊ¾ÉùµÀÊı
-	unsigned char original_copy:1;//Ò»°ãÉèÖÃÎª0
-	unsigned char home:1;//Ò»°ãÉèÖÃÎª0
+	unsigned int syncword:12;//åŒæ­¥å­—0xfffï¼Œè¯´æ˜ä¸€ä¸ªADTSå¸§çš„å¼€å§‹
+	unsigned char ID:1;//IDæ¯”è¾ƒå¥‡æ€ª,æ ‡å‡†æ–‡æ¡£ä¸­æ˜¯è¿™ä¹ˆè¯´çš„â€MPEG identifier, set to â€˜1â€™. See ISO/IEC 11172-3â€³,ä½†æˆ‘å†™0äº†,ä¹Ÿå¯ä»¥
+	unsigned char layer:2;//ä¸€èˆ¬è®¾ç½®ä¸º0
+	unsigned char protection_absent:1;//æ˜¯å¦è¯¯ç æ ¡éªŒ
+	unsigned char profile:2;//è¡¨ç¤ºä½¿ç”¨å“ªä¸ªçº§åˆ«çš„AACï¼Œå¦‚01 Low Complexity(LC)--- AACLC
+	unsigned char sampling_frequency_index:4;//è¡¨ç¤ºä½¿ç”¨çš„é‡‡æ ·ç‡ä¸‹æ ‡0x3 48k ,0x4 44.1k, 0x5 32k
+	unsigned char private_bit:1;//ä¸€èˆ¬è®¾ç½®ä¸º0
+	unsigned char channel_configuration:3;// è¡¨ç¤ºå£°é“æ•°
+	unsigned char original_copy:1;//ä¸€èˆ¬è®¾ç½®ä¸º0
+	unsigned char home:1;//ä¸€èˆ¬è®¾ç½®ä¸º0
 }adts_fixed;
 
 
 typedef struct adts_variable_header
 {  
-	unsigned char copyright_identification_bit:1;//Ò»°ãÉèÖÃÎª0
-	unsigned char copyright_identification_start:1;//Ò»°ãÉèÖÃÎª0
-	unsigned int frame_length:13;// Ò»¸öADTSÖ¡µÄ³¤¶È°üÀ¨ADTSÍ·ºÍraw data block
-	unsigned int adts_buffer_fullness:11;// 0x7FF ËµÃ÷ÊÇÂëÂÊ¿É±äµÄÂëÁ÷
-	unsigned char number_of_raw_data_blocks_in_frame:2;//±íÊ¾ADTSÖ¡ÖĞÓĞnumber_of_raw_data_blocks_in_frame + 1¸öAACÔ­Ê¼Ö¡.
+	unsigned char copyright_identification_bit:1;//ä¸€èˆ¬è®¾ç½®ä¸º0
+	unsigned char copyright_identification_start:1;//ä¸€èˆ¬è®¾ç½®ä¸º0
+	unsigned int frame_length:13;// ä¸€ä¸ªADTSå¸§çš„é•¿åº¦åŒ…æ‹¬ADTSå¤´å’Œraw data block
+	unsigned int adts_buffer_fullness:11;// 0x7FF è¯´æ˜æ˜¯ç ç‡å¯å˜çš„ç æµ
+	unsigned char number_of_raw_data_blocks_in_frame:2;//è¡¨ç¤ºADTSå¸§ä¸­æœ‰number_of_raw_data_blocks_in_frame + 1ä¸ªAACåŸå§‹å¸§.
 }adts_variable;
 
 static int adts_v(void);
